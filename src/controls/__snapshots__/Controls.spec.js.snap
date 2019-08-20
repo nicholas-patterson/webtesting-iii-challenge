@@ -6,13 +6,14 @@ exports[`<Controls/> matches snapshot 1`] = `
 >
   <button
     className="toggle-btn"
-    data-testid="lock"
+    data-testid="togglelocked"
     disabled={true}
   >
     Lock Gate
   </button>
   <button
     className="toggle-btn"
+    data-testid="toggleopen"
   >
     Close Gate
   </button>

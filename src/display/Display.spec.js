@@ -16,23 +16,27 @@ describe("<Display/>", () => {
   });
   it("displays 'Closed' if the prop is true", () => {
     const closed = true;
-    const { getByText } = render(<Display closed={closed} />);
-    getByText(/Closed/i);
+    const { getByTestId } = render(<Display closed={closed} />);
+    const div = getByTestId("closeddiv");
+    expect(div.textContent).toBe("Closed");
   });
   it("displays 'Open' if the props is false", () => {
     const open = false;
-    const { getByText } = render(<Display open={open} />);
-    getByText(/Open/i);
+    const { getByTestId } = render(<Display open={open} />);
+    const div = getByTestId("closeddiv");
+    expect(div.textContent).toBe("Open");
   });
   it("displays 'Locked' if the props is true", () => {
     const locked = true;
-    const { getByText } = render(<Display locked={locked} />);
-    getByText(/Locked/i);
+    const { getByTestId } = render(<Display locked={locked} />);
+    const div = getByTestId("lockeddiv");
+    expect(div.textContent).toBe("Locked");
   });
   it("displays 'Unlocked' if the props is false", () => {
     const locked = false;
-    const { getByText } = render(<Display locked={locked} />);
-    getByText(/Unlocked/i);
+    const { getByTestId } = render(<Display locked={locked} />);
+    const div = getByTestId("lockeddiv");
+    expect(div.textContent).toBe("Unlocked");
   });
   it("when 'locked' or 'closed' use the 'red-led' class", () => {
     const locked = true;
